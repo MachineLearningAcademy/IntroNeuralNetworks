@@ -26,26 +26,15 @@ class NeuralNetwork():
 
 
     def _forward(self, X):
-        forward_values = []
-
-        forward_values.append(X)
-        for weight_matrix in self.weights:
-            values = np.dot(forward_values[-1], weight_matrix)
-            forward_values.append(values)
+        raise NotImplementedError("Complete this function.")
 
         return forward_values
 
 
     def _backward(self, y_hat):
-        backward_values = []
+        raise NotImplementedError("Complete this function.")
 
-        backward_values.append(y_hat.T)
-        for weight_matrix in reversed(self.weights):
-            values = np.dot(weight_matrix, backward_values[-1])
-            backward_values.append(values)
-
-        backward_values = list(map(np.transpose, backward_values))
-        return list(reversed(backward_values))
+        return backward_values
 
 
     def _loss(self, y, y_hat):
